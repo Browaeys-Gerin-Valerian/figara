@@ -11,7 +11,6 @@ require("./middlewares/core.middleware");
 app.use(express.static("public"));
 
 
-
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
