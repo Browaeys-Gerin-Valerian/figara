@@ -1,20 +1,20 @@
-require("dotenv").config();
-require("./config/db.config");
-const express = require("express");
+import "dotenv/config.js";
+import "./config/db.config.js";
+import express from "express";
 const app = express();
-const { PORT, HOST } = require("./config/config");
-const rootRouter = require("./routes");
-exports.app = app;
+import { CONFIG } from "./config/config.js";
+const { HOST, PORT } = CONFIG;
 
-require("./middlewares/core.middleware");
+import router from "./routes/index.js";
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.use(rootRouter);
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`APP RUNNING ON http://${HOST}:${PORT}`);

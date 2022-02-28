@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
-const { DB_HOST, DB_PASSWORD, DB_NAME } = require("./config");
+import mongoose from "mongoose";
+import {CONFIG} from "./config.js"
+const {DB_HOST, DB_PASSWORD, DB_NAME} = CONFIG
 
 mongoose
   .connect(`mongodb+srv://${DB_HOST}:${DB_PASSWORD}@cluster0.fufuc.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`, {
