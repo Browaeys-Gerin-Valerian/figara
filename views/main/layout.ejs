@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-
-        <title>
-            Le Figara
-        </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Le Figara — <%= template %></title>
         <link rel="stylesheet" href="/css/reset.css" type="text/css">
         <link rel="stylesheet" href="/css/showcase.css" type="text/css">
     </head>
 
-    <%- body %>
-    <%- script %>
+    <body>
+
+        <%- include('../main/_partials/_header.ejs') %>
+        <%- include('../main/_partials/_navigation.ejs') %>
+        <%- include('../main/_partials/_aside.ejs') %>
+        <main id="main">
+            <%- include(template) %>
+        </main>
+        <%- include('../main/_partials/_footer.ejs') %>
+
+    </body>
 
 </html>

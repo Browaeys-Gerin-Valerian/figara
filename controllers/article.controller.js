@@ -9,7 +9,11 @@ import {
 export const lastArticles = async (req, res) => {
   try {
     const lastArticleList = await getLastArticles();
-    res.json(lastArticleList).end();
+    //le lastarticleList te renvoie un array de 4 articles
+    res.render("main/layout", {
+      template: "articles",
+      articles: lastArticleList
+    });
   } catch (error) {}
 };
 

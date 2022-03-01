@@ -1,10 +1,14 @@
 <aside id="aside-menu">
-    <input type="search" id="site-search" name="search"
-   aria-label="Rechercher parmi les articles" minlength="3" placeholder="Saisir le terme à rechercher">
-    <button type="submit" class="button--submit">Rechercher</button>
+    <label id="site-search" class="search__container">
+        <input class="search__input" type="search" name="search"
+        aria-label="Rechercher parmi les articles" minlength="3" placeholder="saisir le terme à rechercher">
+        <button type="submit" class="search__button"><img class="icon icon__search" src="../../images/icon__search.svg" alt="Icone de recherche"></button>
+    </label>
 
-    <div class="user__welcome-msg">Bienvenue, Fanfan&#8239;!</div>
-    <div class="user__login">
-        <button type="button" class="button--linkto">Login</button>/<button type="button" class="button--linkto">Sign-up</button>
-    </div>
+    <!-- <div class="user__actions-wrapper"> -->
+        <div class="user__welcome-msg">Bienvenue, Fanfan&#8239;!</div>
+        <div class="user__login">
+            <button type="button" class="button--linkto button--muted">Login</button>/<button type="button" class="button--linkto button--muted">Sign-up</button>
+        </div>
+    <!-- </div> -->
 </aside>
