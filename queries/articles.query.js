@@ -1,16 +1,13 @@
-import {Articles} from "../models/articles/articles/arcticlesModels.js"
-
+import { Articles } from "../models/articles/articlesModel.js";
 
 export const getAllArticles = () => {
-    return Articles.find({}).exec();
+  return Articles.find().exec();
 };
 
 export const getOneArticleById = (id) => {
-    return Articles.findOne({id}).exec();
+  return Articles.findById(id).exec();
 };
 
-
-
 export const deleteArticleById = (id) => {
-    return Articles.deleteOne({id}).exec()
+  return Articles.findByIdAndDelete(id).exec();
 };
