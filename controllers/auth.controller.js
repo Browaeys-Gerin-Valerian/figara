@@ -12,7 +12,7 @@ export const login = async (req, res, next) => {
       //Then checking if the provided password match with the password of the instance
       const match = await user.comparePassword(password);
       if (match) {
-        req.login(user._id, user.isAdmin)
+        req.login(user, user.isAdmin)
         res.status(200).end()
       } else {
         res.status(401).json("Veuillez verifier vos informations de connexion");

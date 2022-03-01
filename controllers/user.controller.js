@@ -18,3 +18,7 @@ export const createUser = async (req, res) => {
     })
     .catch((error) => res.status(500).json({ error }));
 };
+
+export const getProfil = async (req, res) => {
+    res.json(req.user)
+}

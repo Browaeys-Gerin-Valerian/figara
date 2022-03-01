@@ -4,6 +4,14 @@ import {
   deleteArticleById,
 } from "../queries/articles.query.js";
 
+// export const lastArticles = ()=>{
+//   try {
+//     const lastArticleList = await getLastArticles()
+//   } catch (error) {
+    
+//   }
+// }
+
 export const allArticles = async (req, res) => {
   try {
     const articlesList = await getAllArticles();
