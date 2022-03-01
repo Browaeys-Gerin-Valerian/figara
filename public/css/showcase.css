@@ -1,0 +1,247 @@
+* {
+    /* font-family: monospace, monospace; */
+    font-size: 1em;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: normal normal normal 1rem/1.6 Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+}
+  
+body {
+    color: #4c4c4c;
+    background: white;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 1.5rem 0;
+    font-weight: 600;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    color: #4c4c4c;
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child) {
+    margin: 1.5rem 0;
+}
+  
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child) {
+    margin-top: 2rem;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }  
+h3 { font-size: 1.25rem; }  
+h4 { font-size: 1.1rem; }  
+h5 { font-size: 1rem; }
+
+@media (min-width: 600px) {
+    h1:not(:first-child),
+    h2:not(:first-child),
+    h3:not(:first-child) { margin-top: 2.5rem; }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+}
+
+a {
+    color: #0366ee;
+    text-decoration: none;
+}
+  
+a:hover, 
+a:active, 
+a:focus {
+    color: #0246a2;
+    text-decoration: underline;
+}
+
+
+
+/* 
+ *      general layout
+ */
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: grid; 
+    grid-template-columns: 15vw 1fr; 
+    grid-template-rows: 10vh 1fr 10vh; 
+    gap: 0; 
+    grid-template-areas: 
+      "logotype aside-menu"
+      "navigation main"
+      "footer main"; 
+}
+
+#logotype { grid-area: logotype; }
+#navigation { grid-area: navigation; }
+#main { grid-area: main; }
+#aside-menu { grid-area: aside-menu; }
+#footer { grid-area: footer; }
+
+
+/* 
+ *      logotype
+ */
+
+#logotype {
+    padding: 0 10px;
+    display: grid;
+    align-content: center;
+}
+
+#logotype h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+
+/*
+ *      navigation
+ */
+
+#navigation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    font-size: 1.2rem;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    color: #4c4c4c;
+}
+
+
+
+/* 
+ *      aside-menu
+ */
+
+#aside-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+
+
+/* 
+ *      main
+ */
+
+#main {
+    padding: 0 20px;
+    overflow: auto;
+    font-weight: 600;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #4c4c4c;
+    line-height: 1.2;
+}
+
+#main .articles__container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 70%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+#main .articles__container .article__item {
+    flex-basis: calc(50% - 10px);
+    flex-grow: 0;
+    padding: 15px;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: minmax(24px, max-content) 1fr 30px;; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "title"
+        "excerpt"
+        "categories"; 
+}
+
+#main .articles__container .article__item:hover {
+    text-decoration: none;
+}
+
+#main .articles__container .article__item .article__title {
+    grid-area: title;
+}
+
+#main .articles__container .article__item:hover .article__title--no-overline {
+    display: none;
+}
+
+#main .articles__container .article__item .article__title--no-overline {
+    display: block;
+}
+
+#main .articles__container .article__item .article__title--overline {
+    display: none;
+}
+
+#main .articles__container .article__item:hover .article__title--overline {
+    display: block;
+    text-decoration: underline;
+    text-decoration-line: overline;
+    text-decoration-thickness: 3.5px;
+    text-decoration-color: #ea777a;
+    font-size: 1.2rem;
+}
+
+#main h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    text-transform: lowercase;
+}
+
+#main .article__excerpt {
+    grid-area: excerpt;
+    color: #4c4c4c;
+    font-size: 1rem;
+}
+
+#main .article__categories {
+    grid-area: categories;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    height: 30px;
+    align-items: center;
+}
+
+#main .categories__item {
+    color: tomato;
+    font-size: .8rem;
+}
