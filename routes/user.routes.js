@@ -1,7 +1,8 @@
 import express from "express";
 import { getProfil } from "../controllers/user.controller.js";
-import {isAuthenticatedAsAdmin} from "../middlewares/jwtCheck.middleware.js"
-import adminRouter from "./admin/admin.routes.js"
+import {isAuthenticatedAsAdmin} from "../middlewares/jwtCheck.middleware.js";
+import adminRouter from "./admin/admin.routes.js";
+
 const userRouter = express.Router();
 
 
