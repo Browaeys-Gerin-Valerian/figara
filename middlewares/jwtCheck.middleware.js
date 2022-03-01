@@ -6,14 +6,10 @@ import { findUserPerId } from "../queries/users.query.js";
 
 export const extractUserFromToken = async (req, res, next) => {
   const token = req.cookies.webapp;
-  console.log("TOKKKEEEENNN----->", token);
   if (token) {
     try {
       const decodedToken = jwt.verify(token, SECRET_KEY);
       const user = await findUserPerId(decodedToken.user);
-      
-      console.log("TOKKKEEEENNN_USER----->", decodedToken.user);
-      console.log("TOKKKEEEENNN_ISADMIN----->", decodedToken.isAdmin);
 
       if (user) {
         req.user = user;
@@ -58,3 +54,11 @@ export const isAuthenticated = (req, res, next) => {
     res.status(403).end();
   }
 };
+
+export const isAuthenticatedAsAdmin = (req, res, next)=>{
+  if(req.isAuth && req.user.isAdmin){
+    next()
+  } else {
+    res.status(403).end()
+  }
+}

@@ -2,15 +2,23 @@ import {
   getAllArticles,
   getOneArticleById,
   deleteArticleById,
+  getLastArticles,
 } from "../queries/articles.query.js";
 
-// export const lastArticles = ()=>{
-//   try {
-//     const lastArticleList = await getLastArticles()
-//   } catch (error) {
-    
-//   }
-// }
+export const lastArticles = async (req, res) => {
+  try {
+    const lastArticleList = await getLastArticles();
+    res.json(lastArticleList).end();
+  } catch (error) {}
+};
+
+export const newArticle = async (req, res) => {
+  const body = req.body;
+  try {
+    const newArticle = await createNewArticle(body);
+    // res.json(newArticle).end();
+  } catch (error) {}
+};
 
 export const allArticles = async (req, res) => {
   try {
@@ -19,7 +27,6 @@ export const allArticles = async (req, res) => {
   } catch (error) {}
 };
 
-
 export const articleDetail = async () => {
   const { id } = req.params;
   try {
@@ -27,7 +34,6 @@ export const articleDetail = async () => {
     res.json(article).end();
   } catch (error) {}
 };
-
 
 export const articleDelete = async () => {
   const { id } = req.params;
