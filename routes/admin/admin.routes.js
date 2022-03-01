@@ -4,4 +4,5 @@ import { newArticle } from "../../controllers/article.controller.js";
 
 adminRouter.post("/article/new", newArticle);
 
+
 export default adminRouter;

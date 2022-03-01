@@ -1,10 +1,11 @@
 import express from "express";
 const router = express.Router();
 import {isAuthenticated} from "../middlewares/jwtCheck.middleware.js"
+import {lastArticles} from "../controllers/article.controller.js"
 import  authRouter  from "./auth.routes.js"
 import userRouter from "./user.routes.js"
 
-// router.use("/")
+router.use("/", lastArticles)
 router.use("/auth", authRouter)
 router.use("/user",isAuthenticated, userRouter);
 

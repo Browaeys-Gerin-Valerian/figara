@@ -3,6 +3,7 @@ import {
   getOneArticleById,
   deleteArticleById,
   getLastArticles,
+  createNewArticle,
 } from "../queries/articles.query.js";
 
 export const lastArticles = async (req, res) => {
@@ -13,10 +14,10 @@ export const lastArticles = async (req, res) => {
 };
 
 export const newArticle = async (req, res) => {
-  const body = req.body;
+  const { body } = req;
   try {
     const newArticle = await createNewArticle(body);
-    // res.json(newArticle).end();
+    res.json(newArticle).end();
   } catch (error) {}
 };
 
