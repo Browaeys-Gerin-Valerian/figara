@@ -1,14 +1,24 @@
 import pkg from "mongoose";
 const { Schema, model } = pkg;
 
+const choicesSchema = Schema({
+  label: { type: String, required: true },
+  isCorrect: { type: Boolean, required: true },
+});
+
 const quizzesSchema = Schema(
   {
     index: Number,
     question: { type: String, required: true },
-    choices: [{ label: { type: String }, isCorrect: { type: Boolean } }],
+    choices: [choicesSchema],
   },
   { timestamps: true }
 );
+
+choicesSchema.pre("save", async function () {
+  const docCount = await Choices.countDocuments();
+  return (this.index = docCount + 1);
+});
 
 quizzesSchema.pre("save", async function () {
   const docCount = await Quizzes.countDocuments();
@@ -16,3 +26,4 @@ quizzesSchema.pre("save", async function () {
 });
 
 export const Quizzes = model("quizzes", quizzesSchema);
+export const Choices = model("choices", choicesSchema);
