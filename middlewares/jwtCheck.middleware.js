@@ -16,14 +16,17 @@ export const extractUserFromToken = async (req, res, next) => {
       console.log("TOKKKEEEENNN_ISADMIN----->", decodedToken.isAdmin);
 
       if (user) {
+        req.user = user;
         req.isAuth = true;
         next();
       } else {
         res.clearCookie("webapp");
+        req.user = null;
         req.isAuth = false;
       }
     } catch (e) {
       res.clearCookie("webapp");
+      req.user = null;
       req.isAuth = false;
       next();
     }
@@ -35,11 +38,13 @@ export const extractUserFromToken = async (req, res, next) => {
 export const jwtHelpers = (req, res, next) => {
   req.logout = () => {
     res.clearCookie("webapp");
+    req.user = null;
     res.isAuth = false;
     res.redirect("/");
   };
   req.login = (user, isAdmin) => {
-    const token = createJwt(user, isAdmin);
+    const token = createJwt(user._id, isAdmin);
+    req.user = user;
     req.isAuth = true;
     res.cookie("webapp", token);
   };

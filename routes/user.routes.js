@@ -1,11 +1,12 @@
 import express from "express";
-const router = express.Router();
+import { getProfil } from "../controllers/user.controller.js";
+const userRouter = express.Router();
 
 
-router.get("/profil");
-router.get("/categories");
-router.get("/category/:id");
-router.get("/article/:id");
-router.get("/quizz/:id");
+userRouter.get("/profil", getProfil)
+userRouter.get("/categories");
+userRouter.get("/category/:id");
+userRouter.get("/article/:id");
+userRouter.get("/quizz/:id");
 
-export default router;
+export default userRouter;
