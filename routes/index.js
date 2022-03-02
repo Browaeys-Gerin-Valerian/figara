@@ -1,13 +1,17 @@
 import express from "express";
 const router = express.Router();
-import {isAuthenticated} from "../middlewares/jwtCheck.middleware.js"
 import  authRouter  from "./auth.routes.js"
 import userRouter from "./user.routes.js"
-import allRouter from "./all.routes.js"
+import appRouter from "./app.routes.js"
+import authMiddleware from "../middlewares/auth.middleware.js";
 
-router.use("/all",allRouter )
+router.use((req, res, next) => {
+  res.locals.pseudo = req.session.pseudo;
+  next();
+});
+router.use("/app", appRouter )
 router.use("/auth", authRouter);
-router.use("/user", isAuthenticated, userRouter);
+router.use("/user", authMiddleware, userRouter);
 
 
 

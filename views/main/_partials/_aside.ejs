@@ -1,14 +1,25 @@
 <aside id="aside-menu">
-    <label id="site-search" class="search__container">
-        <input class="search__input" type="search" name="search"
-        aria-label="Rechercher parmi les articles" minlength="3" placeholder="saisir le terme à rechercher">
-        <button type="submit" class="search__button"><img class="icon icon__search" src="../../images/icon__search.svg" alt="Icone de recherche"></button>
-    </label>
+    <div class="search__wrapper">
+        <label id="site-search" class="search__container">
+            <input class="search__input" type="search" name="search"
+            aria-label="Rechercher parmi les articles" minlength="3" placeholder="saisir le terme à rechercher">
+            <button type="submit" class="search__button"><img class="icon icon__search" src="../../images/icon__search.svg" alt="Icone de recherche"></button>
+        </label>
+    </div>
 
-    <!-- <div class="user__actions-wrapper"> -->
-        <div class="user__welcome-msg">Bienvenue, Fanfan&#8239;!</div>
+    <div class="user__actions-wrapper">
+        <% if (pseudo) { %>
+            <div class="user__welcome-msg">Bienvenue, <%= pseudo %> &#8239;!</div>
+        <% } %>
         <div class="user__login">
-            <button type="button" class="button--linkto button--muted">Login</button>/<button type="button" class="button--linkto button--muted">Sign-up</button>
+
+            <% if (pseudo) { %>
+                <a id="button__logout" class="button--linkto button--muted" href="/auth/logout">Logout</a>
+            <% } else { %>
+                <a id="button__login" class="button--linkto button--muted" href="/auth/login">Login</a>
+            <% } %>
+
+            <!-- /<button type="button" class="button--linkto button--muted">Sign-up</button> -->
         </div>
-    <!-- </div> -->
+    </div>
 </aside>

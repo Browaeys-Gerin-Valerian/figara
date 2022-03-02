@@ -1,24 +1,33 @@
 import { Users } from "../models/users/usersModel.js";
-import  bcrypt  from "bcrypt";
+import bcrypt from "bcrypt";
 
 export const createUser = async (req, res) => {
-  bcrypt
-    .hash(req.body.password, 10)
-    .then((hash) => {
-      Users.create({
-        mail: req.body.mail,
-        password: hash,
-        pseudo: req.body.pseudo,
-        isAdmin: false,
+
+  if (req.method === "GET") {
+    res.render("main/layout", { template: "signup" });
+  }
+
+  if (req.method === "POST") {
+    bcrypt
+      .hash(req.body.password, 10)
+      .then((hash) => {
+        Users.create({
+          mail: req.body.mail,
+          password: hash,
+          pseudo: req.body.pseudo,
+          isAdmin: false,
+        })
+          .then(() => res.redirect("login"))
+          .catch((error) => {
+            res.render("main/layout", { template: "signup", error: "Erreur lors de la création" });
+          });
       })
-        .then(() => res.status(201).json({ message: "Utilisateur créé" }))
-        .catch((error) => {
-          res.status(400).json({ error: "Requête incorrecte" });
-        });
-    })
-    .catch((error) => res.status(500).json({ error }));
+      .catch((error) => res.render("main/layout", { template: "signup", error: "Une erreur est survenue" }));
+  }
+
+
 };
 
 export const getProfil = async (req, res) => {
-    res.json(req.user)
+  res.json(req.user)
 }

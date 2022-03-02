@@ -1,14 +1,18 @@
 <nav id="navigation">
     <span class="navigation__item--overline <%= template === "articles" ? "navigation__item--active" : "" %>">
-        <a class="navigation__item</a>" href="/articles">Articles</a>
+        <a class="navigation__item</a>" href="articles">Articles</a>
     </span>
-    <span class="navigation__item--overline <%= template === "categories" ? "navigation__item--active" : "" %></span>">
-        <a class="navigation__item" href="/categories">Categories</a>
+       <% if (pseudo) { %>
+       <span class="navigation__item--overline <%= template === "categories" ? "navigation__item--active" : "" %></span>">
+        <a class="navigation__item" href="categories">Catégories</a>
     </span>
-    <span class="navigation__item--overline <%= template === "admin" ? "navigation__item--active" : "" %></span>">
-        <a class="navigation__item" href="/admin" class="active">Administration</a>
-    </span>
+       <% } %>
+       <% if (pseudo){ %>
+       <span class="navigation__item--overline <%= template === "admin" ? "navigation__item--active" : "" %></span>">
+        <a class="navigation__item" href="admin" class="active">Back office</a>
+    </span> 
+       <% } %>
     <span class="navigation__item--overline <%= template === "contact" ? "navigation__item--active" : "" %></span>">
-        <a class="navigation__item" href="/contact">Contact</a>
+        <a class="navigation__item" href="contact">Contact</a>
     </span>
 </nav>

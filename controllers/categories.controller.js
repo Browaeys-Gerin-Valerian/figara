@@ -4,8 +4,8 @@ export const createCategories = async (req, res) => {
     Categories.create({
         name: req.body.name
     })
-    .then(() => res.status(201).json({ message: "Catégorie enregistré !"}))
-    .catch(error => res.status(400).json({ message: "Erreur lors de la création de la catégorie !"}))
+    .then(() => res.status(201).json({ message: "Catégorie enregistrée !"}))
+    .catch(error => res.status(400).json({ message: "Erreur lors de la création de la catégorie."}))
 };
 
 export const getAllCategories = async (req, res) => {
@@ -23,7 +23,7 @@ export const getCategories = async (req, res) => {
 export const deleteCategories = async (req, res) => {
     Categories.findOne({ where: { id: req.params._id}})
     Categories.deleteOne({ where: { id: req.params._id}})
-    .then(() => res.status(200).json({ message: "Catégorie supprimé avec succès"}))
+    .then(() => res.status(200).json({ message: "Catégorie supprimée avec succès"}))
     .catch(error => res.status(400).json({ error }))
 };
 
@@ -33,6 +33,6 @@ export const modifyCategories = async (req, res) => {
         ...JSON.parse(req.body.categories),
     } : { ...req.body };
     Categories.updateOne({where: { id: req.params._id}}, { ...categoriesObject, id: req.params._id})
-    .then(() => res.status(200).json({ message : "Catégorie modifié !"}))
+    .then(() => res.status(200).json({ message : "Catégorie modifiée !"}))
     .catch(error => res.status(400).json({ error })) 
 };

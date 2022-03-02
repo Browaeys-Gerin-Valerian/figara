@@ -10,25 +10,17 @@ export const lastArticles = async (req, res) => {
   try {
     const lastArticleList = await getLastArticles();
     //le lastarticleList te renvoie un array de 4 articles
-    res.render("main/layout", {
-      template: "articles",
-      articles: lastArticleList
-    });
+    res.render("main/layout", { template: "homepage", articles: lastArticleList});
   } catch (error) {}
 };
 
-export const newArticle = async (req, res) => {
-  const { body } = req;
-  try {
-    const newArticle = await createNewArticle(body);
-    res.json(newArticle).end();
-  } catch (error) {}
-};
+
 
 export const allArticles = async (req, res) => {
   try {
     const articlesList = await getAllArticles();
-    res.json(articlesList).end();
+    res.render("main/layout", { template: "articles", articles: articlesList});
+
   } catch (error) {}
 };
 
@@ -37,6 +29,16 @@ export const articleDetail = async () => {
   try {
     const article = await getOneArticleById(id);
     res.json(article).end();
+  } catch (error) {}
+};
+
+
+
+export const newArticle = async (req, res) => {
+  const { body } = req;
+  try {
+    const newArticle = await createNewArticle(body);
+    res.json(newArticle).end();
   } catch (error) {}
 };
 

@@ -1,73 +1,28 @@
-<section class="articles__container">
+<section class="articles__wrapper">
+    <article class="articles__container">
+        <% for (const { index, title, content, categories } of articles) { %> 
                     
-    <a class="article__item" id="1" href="">
-        <div class="article__title">
-            <span class="article__title--overline">
-                <h3>Le titre de l'article</h3>
-            </span>
-            <h3 class="article__title--no-overline">Le titre de l'article</h3>
-        </div>
-        <span class="article__title--overline"></span>
-        <h3 class="article__title">Le titre de l'article</h3>
-        <div class="article__excerpt">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus molestie massa sit amet rhoncus. Morbi ut metus et nulla accumsan posuere ut vel quam. 
-        </div>
-        <ul class="article__categories">
-            <li class="categories__item">Smartphones</li>
-            <li class="categories__item">Jeux vidéos</li>
-            <li class="categories__item">Front-end</li>
-        </ul>
-    </a>
+            <a class="article__item" id="<%= index %>" href="articles/<%= index %>">
+                <div class="article__title">
+                    <span class="article__title--overline">
+                        <h3><%= title %></h3>
+                    </span>
+                    <h3 class="article__title--no-overline"><%= title %></h3>
+    
+                </div>
+                <div class="article__excerpt"><%= content %></div>
+                <ul class="article__categories">
+                    <li class="categories__item">Smartphones</li>
+                    <li class="categories__item">Jeux vidéos</li>
+                    <li class="categories__item">Front-end</li>
+                </ul>
+            </a>
+        
+        <% } %>
+    </article>
+    
+    <article class="articles__show-all-container">
+        <a id="articles__show-all" class="button button--accent" href="/../app/articles">Voir tous les articles</a>
+    </article>
 
-    <a class="article__item" id="2" href="">
-        <div class="article__title">
-            <span class="article__title--overline">
-                <h3>Le titre de l'article</h3>
-            </span>
-            <h3 class="article__title--no-overline">Le titre de l'article</h3>
-        </div>
-        <div class="article__excerpt">
-            Quisque faucibus interdum eros, nec ultrices sapien commodo vitae. Sed mauris nulla, tempor nec porttitor sed, tristique vel ipsum. 
-        </div>
-        <ul class="article__categories">
-            <li class="categories__item">Front-end</li>
-        </ul>
-    </a>
-
-    <a class="article__item" id="3" href="">
-        <div class="article__title">
-            <span class="article__title--overline">
-                <h3>Le titre de l'article</h3>
-            </span>
-            <h3 class="article__title--no-overline">Le titre de l'article</h3>
-        </div>
-        <div class="article__excerpt">
-            Nunc accumsan blandit ligula, vitae tincidunt lectus efficitur porta. Nullam nec ultricies ex. 
-        </div>
-        <ul class="article__categories">
-            <li class="categories__item">Smartphones</li>
-            <li class="categories__item">Front-end</li>
-        </ul>
-    </a>
-
-    <a class="article__item" id="4" href="">
-        <div class="article__title">
-            <span class="article__title--overline">
-                <h3>Le titre de l'article</h3>
-            </span>
-            <h3 class="article__title--no-overline">Le titre de l'article</h3>
-        </div>
-        <div class="article__excerpt">
-            In sodales nunc eget turpis tristique, at commodo lectus ultrices. Vivamus justo lorem, imperdiet vel posuere et, pellentesque.
-        </div>
-        <ul class="article__categories">
-            <li class="categories__item">Jeux vidéos</li>
-            <li class="categories__item">Front-end</li>
-        </ul>
-    </a>
-
-</section>
-
-<div class="articles__show-all-container">
-<a id="articles__show-all" class="button button--accent" href="/../main/articles">Voir tous les articles</a>
-</div>
+</article>

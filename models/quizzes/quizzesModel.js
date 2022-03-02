@@ -1,24 +1,22 @@
 import pkg from "mongoose";
 const { Schema, model } = pkg;
 
-const choicesSchema = Schema({
-  label: { type: String, required: true },
-  isCorrect: { type: Boolean, required: true },
-});
+
 
 const quizzesSchema = Schema(
   {
     index: Number,
     question: { type: String, required: true },
-    choices: [choicesSchema],
+    C1: {label: {type: String, required: true}, isCorrect: {type: Boolean, required: true}},
+    C2: {label: {type: String, required: true}, isCorrect: {type: Boolean, required: true}}, 
+    C3: {label: {type: String}, isCorrect: {type: Boolean}},
+    C4: {label: {type: String}, isCorrect: {type: Boolean}},
+    C5: {label: {type: String}, isCorrect: {type: Boolean}},
   },
   { timestamps: true }
 );
 
-choicesSchema.pre("save", async function () {
-  const docCount = await Choices.countDocuments();
-  return (this.index = docCount + 1);
-});
+
 
 quizzesSchema.pre("save", async function () {
   const docCount = await Quizzes.countDocuments();
@@ -26,4 +24,4 @@ quizzesSchema.pre("save", async function () {
 });
 
 export const Quizzes = model("quizzes", quizzesSchema);
-export const Choices = model("choices", choicesSchema);
+

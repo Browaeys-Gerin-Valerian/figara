@@ -1,0 +1,18 @@
+<div class="main__page-title-container">
+    <h2 class="main__page-title">Catégories</h2>
+</div>
+
+<section class="main__content categories__container">
+    <ul class="categories__list">
+
+        <% for (const { index, name } of categories) { %>     
+            <li class="categories__item">
+                <a class="categories__item category" id="<%= index %>" href="categories/<%= index %>">
+                    <%= name %>
+                </a>
+            </li>     
+        <% } %>
+
+    </ul>
+                    
+</section>

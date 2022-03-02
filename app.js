@@ -1,22 +1,30 @@
 import "dotenv/config.js";
 import "./config/db.config.js";
 import express from "express";
+import session from 'express-session';
 const app = express();
-import { default as cookieParser } from "cookie-parser";
 import { CONFIG } from "./config/config.js";
-const { HOST, PORT } = CONFIG;
-import {
-  extractUserFromToken,
-  jwtHelpers,
-} from "./middlewares/jwtCheck.middleware.js";
+import {logger} from "./middlewares/logger.js"
+const { HOST, PORT, DB_HOST, DB_PASSWORD, DB_NAME, SECRET_KEY } = CONFIG;
+import MongoStore from 'connect-mongo';
 import router from "./routes/index.js";
+
+
+app.use(session({
+  name : 'session-id',
+  secret : SECRET_KEY,
+  resave :true,
+  saveUninitialized: true,
+  store: MongoStore.create({ mongoUrl:`mongodb+srv://${DB_HOST}:${DB_PASSWORD}@cluster0.fufuc.mongodb.net/${DB_NAME}?retryWrites=true&w=majority` }),
+  cookie : { maxAge : 180 * 60 * 1000 } // on détermine la durée de vie de la session
+}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(express.static("public"));
-app.use(extractUserFromToken);
-app.use(jwtHelpers);
+app.use(logger)
+
 
 
 
