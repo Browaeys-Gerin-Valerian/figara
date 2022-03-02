@@ -5,8 +5,6 @@ const categoriesSchema = Schema(
     {
         index: Number,
         name: {type: String, required: true},
-        
-
     },
     {timestamps: true}
 );

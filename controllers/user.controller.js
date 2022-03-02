@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 export const createUser = async (req, res) => {
 
   if (req.method === "GET") {
-    res.render("main/layout", { template: "signup" });
+    res.render("main/layout", { template: "register" });
   }
 
   if (req.method === "POST") {
@@ -19,10 +19,10 @@ export const createUser = async (req, res) => {
         })
           .then(() => res.redirect("login"))
           .catch((error) => {
-            res.render("main/layout", { template: "signup", error: "Erreur lors de la création" });
+            res.render("main/layout", { template: "register", error: "Erreur lors de la création" });
           });
       })
-      .catch((error) => res.render("main/layout", { template: "signup", error: "Une erreur est survenue" }));
+      .catch((error) => res.render("main/layout", { template: "register", error: "Une erreur est survenue" }));
   }
 
 

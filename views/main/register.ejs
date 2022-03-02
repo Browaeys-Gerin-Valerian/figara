@@ -1,9 +1,14 @@
 <div class="main__page-title-container">
-    <h2 class="main__page-title">S'identifier</h2>
+    <h2 class="main__page-title">S'inscrire</h2>
 </div>
 
 <section class="main__content user__login">
-    <form action="/login" method="POST" class="user__form">
+    <form action="/createUser" method="POST" class="user__form">
+        <fieldset class="user__field">
+            <label for="name">Pseudo&#8239;: </label>
+            <input type="text" name="name" min="3" id="name" placeholder="Fanfan la Tulipe" />
+        </fieldset>
+
         <fieldset class="user__field">
             <label for="email">Email&#8239;:</label>
         <input type="email" name="email" id="email" placeholder="fanfan@latulipe.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
@@ -15,7 +20,7 @@
         </fieldset>
         
         <div class="user__submit">
-            <button type="submit" value="Soumettre" class="button button--accent">Se connecter</button>
+            <button type="submit" value="Soumettre" class="button button--accent">Soumettre</button>
         </div>
     </form>          
 </section>

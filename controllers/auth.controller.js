@@ -43,7 +43,7 @@ export const login = async (req, res, next) => {
 
                 const lastArticleList = await getLastArticles()
                 res.render("main/layout", { template: "homepage", articles: lastArticleList })
-                // res.redirect("signup")
+                // res.redirect("register")
 
                 return;
             }

@@ -1,0 +1,88 @@
+/*
+ *      quizz
+ */
+
+#main .choices__list {
+    list-style: none;
+    padding: 0 15px;
+    margin: 30px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    gap: 15px;
+}
+
+#main .choices__list .button.button--accent {
+    margin: 0 0 15vh 0;
+  }
+
+#main .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: auto;
+}
+
+#main .custom-checkbox--with-label {
+    grid-template-columns: 20px 1fr;
+    grid-template-rows: 20px;
+    gap: 10px;
+    align-content: center;
+    width: max-content;
+}
+
+#main .custom-checkbox input[type="checkbox"] {
+    grid-area: 1/-1;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#main .custom-checkbox--with-label input[type="checkbox"] {
+    grid-area: 1/1/2/2;
+}
+
+#main .custom-checkbox span.custom-checkbox--marker {
+    grid-area: 1/1;
+}
+
+#main span.custom-checkbox--marker {
+    grid-area: 1/1;
+    height: 20px;
+    width: 20px;
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #cdcdcd;
+    border-radius: 3px;
+}
+
+#main .custom-checkbox--with-label span.custom-checkbox--marker {
+    grid-area: 1/1/2/2;
+}
+
+#main .custom-checkbox--with-label custom-checkbox__label {
+    grid-area: 1/2/2/3;
+    color: #4c4c4c;
+}
+
+#main span.custom-checkbox--marker::after {
+    content: "";
+    display: none;
+    width: calc(20px - 4px);
+    height: calc(20px - 4px);
+    border-radius: 3px;
+    background: #fbd106;
+    margin: 1px;
+}
+
+#main .custom-checkbox input[type="checkbox"]:checked ~ .custom-checkbox--marker::after {
+    display: block;
+}
