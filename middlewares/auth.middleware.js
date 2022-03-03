@@ -12,7 +12,6 @@ export default (req, res, next) => {
 
             return;
         }
-		// continue l'action / passe au middleware suivant ; si on l'omets, l'action sera bloqué et notre appli' par la même occasion !
         next();
     });
 };

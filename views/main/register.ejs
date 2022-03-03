@@ -3,24 +3,28 @@
 </div>
 
 <section class="main__content user__login">
-    <form action="/createUser" method="POST" class="user__form">
+    <form action="/auth/register" method="POST" class="user__form">
+        <fieldset class="user__field user__error">
+            <h5><%= error %></h5> 
+        </fieldset>
+        
         <fieldset class="user__field">
-            <label for="name">Pseudo&#8239;: </label>
-            <input type="text" name="name" min="3" id="name" placeholder="Fanfan la Tulipe" />
+            <label for="pseudo">Pseudo&#8239;: </label>
+            <input type="text" name="pseudo" min="3" id="pseudo" placeholder="Fanfan la Tulipe" />
         </fieldset>
 
         <fieldset class="user__field">
-            <label for="email">Email&#8239;:</label>
-        <input type="email" name="email" id="email" placeholder="fanfan@latulipe.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
+            <label for="mail">Email&#8239;:</label>
+        <input type="email" name="mail" id="mail" placeholder="fanfan@latulipe.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
         </fieldset>
 
         <fieldset class="user__field">
             <label for="password">Mot de passe&#8239;: </label>
-            <input type="text" min="3" name="password" id="password" />
+            <input  title="Le mot de passe doit comporter au moins six caractères, dont un chiffre, une minuscule, une majuscule et un caractère spécial." type="text" min="6" name="password" id="password" />
         </fieldset>
         
         <div class="user__submit">
             <button type="submit" value="Soumettre" class="button button--accent">Soumettre</button>
         </div>
-    </form>          
+    </form>         
 </section>

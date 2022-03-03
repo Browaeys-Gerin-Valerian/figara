@@ -1,18 +1,21 @@
 <nav id="navigation">
     <span class="navigation__item--overline <%= template === "articles" ? "navigation__item--active" : "" %>">
-        <a class="navigation__item</a>" href="articles">Articles</a>
+        <a class="navigation__item</a>" href="/app/articles">Articles</a>
     </span>
-       <% if (pseudo) { %>
-       <span class="navigation__item--overline <%= template === "categories" ? "navigation__item--active" : "" %></span>">
-        <a class="navigation__item" href="categories">Catégories</a>
-    </span>
-       <% } %>
-       <% if (pseudo){ %>
-       <span class="navigation__item--overline <%= template === "admin" ? "navigation__item--active" : "" %></span>">
-        <a class="navigation__item" href="admin" class="active">Back office</a>
-    </span> 
-       <% } %>
+    <h1><%= test %></h1>
+    <% if (pseudo) { %>
+        <span class="navigation__item--overline <%= template === "categories" ? "navigation__item--active" : "" %></span>">
+            <a class="navigation__item" href="/auth/categories">Catégories</a>
+        </span>
+    <% } %>
+
+    <% if (pseudo) { %>
+        <span class="navigation__item--overline <%= template === "admin" ? "navigation__item--active" : "" %></span>">
+            <a class="navigation__item" href="/user/admin" class="active">Back office</a>
+        </span> 
+    <% } %>
+
     <span class="navigation__item--overline <%= template === "contact" ? "navigation__item--active" : "" %></span>">
-        <a class="navigation__item" href="contact">Contact</a>
+        <a class="navigation__item" href="/app/contact">Contact</a>
     </span>
 </nav>

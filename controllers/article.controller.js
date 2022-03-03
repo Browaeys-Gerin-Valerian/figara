@@ -10,8 +10,9 @@ export const lastArticles = async (req, res) => {
   try {
     const lastArticleList = await getLastArticles();
     //le lastarticleList te renvoie un array de 4 articles
-    res.render("main/layout", { template: "homepage", articles: lastArticleList});
-  } catch (error) {}
+    res.render("main/layout", { template: "homepage", articles: lastArticleList });
+
+  } catch (error) { }
 };
 
 
@@ -19,17 +20,18 @@ export const lastArticles = async (req, res) => {
 export const allArticles = async (req, res) => {
   try {
     const articlesList = await getAllArticles();
-    res.render("main/layout", { template: "articles", articles: articlesList});
+    res.render("main/layout", { template: "articles", articles: articlesList });
 
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const articleDetail = async () => {
   const { id } = req.params;
   try {
     const article = await getOneArticleById(id);
-    res.json(article).end();
-  } catch (error) {}
+    res.render("main/layout", { template: "auth/article", article });
+
+  } catch (error) { }
 };
 
 
@@ -39,7 +41,7 @@ export const newArticle = async (req, res) => {
   try {
     const newArticle = await createNewArticle(body);
     res.json(newArticle).end();
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const articleDelete = async () => {
@@ -47,5 +49,5 @@ export const articleDelete = async () => {
   try {
     const article = await deleteArticleById(id);
     res.json(article).end();
-  } catch (error) {}
+  } catch (error) { }
 };

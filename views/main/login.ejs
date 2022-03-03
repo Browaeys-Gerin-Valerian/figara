@@ -3,15 +3,15 @@
 </div>
 
 <section class="main__content user__login">
-    <form action="/login" method="POST" class="user__form">
+    <form action="/auth/login" method="POST" class="user__form">
         <fieldset class="user__field">
-            <label for="email">Email&#8239;:</label>
-        <input type="email" name="email" id="email" placeholder="fanfan@latulipe.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
+            <label for="mail">Email&#8239;:</label>
+        <input type="email" name="mail" id="mail" placeholder="fanfan@latulipe.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
         </fieldset>
 
         <fieldset class="user__field">
             <label for="password">Mot de passe&#8239;: </label>
-            <input type="text" min="3" name="password" id="password" />
+            <input title="Le mot de passe doit comporter au moins six caractères, dont un chiffre, une minuscule, une majuscule et un caractère spécial." type="text" min="3" name="password" id="password" />
         </fieldset>
         
         <div class="user__submit">

@@ -1,8 +1,8 @@
 <section class="articles__wrapper">
     <article class="articles__container">
-        <% for (const { index, title, content, categories } of articles) { %> 
+        <% for (const { _id, index, title, content, categories } of articles) { %> 
                     
-            <a class="article__item" id="<%= index %>" href="articles/<%= index %>">
+            <a class="article__item" id="<%= index %>" href="/user/article/<%= _id %>">
                 <div class="article__title">
                     <span class="article__title--overline">
                         <h3><%= title %></h3>
@@ -22,7 +22,7 @@
     </article>
     
     <article class="articles__show-all-container">
-        <a id="articles__show-all" class="button button--accent" href="/../app/articles">Voir tous les articles</a>
+        <a id="articles__show-all" class="button button--accent" href="/app/articles">Voir tous les articles</a>
     </article>
 
 </article>

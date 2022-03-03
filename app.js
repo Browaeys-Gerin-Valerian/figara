@@ -4,7 +4,6 @@ import express from "express";
 import session from 'express-session';
 const app = express();
 import { CONFIG } from "./config/config.js";
-import {logger} from "./middlewares/logger.js"
 const { HOST, PORT, DB_HOST, DB_PASSWORD, DB_NAME, SECRET_KEY } = CONFIG;
 import MongoStore from 'connect-mongo';
 import router from "./routes/index.js";
@@ -23,7 +22,12 @@ app.use(session({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(logger)
+app.use((req, res, next)=>{
+  console.log("SESSIONS_PSEUDO", req.session?.pseudo)
+  console.log("SESSIONS_ISADMIN", req.session?.isAdmin)
+  next()
+
+})
 
 
 

@@ -16,7 +16,7 @@
         &__field {
             display: flex;
             justify-content: flex-start;
-            padding: 5px 10px;
+            padding: 5px 0;
             border: none;
             align-items: baseline;
             label {
@@ -43,6 +43,15 @@
                     text-decoration: none;
                     outline: none;
                 }
+            }
+        }
+        &__error {
+            justify-content: center;
+            h5 {
+                color: #FA3C4C;
+                font-size: .8rem;
+                margin: .5rem 0;
+                text-align: center;
             }
         }
         &__submit {

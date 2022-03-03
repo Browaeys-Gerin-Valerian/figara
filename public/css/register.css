@@ -13,7 +13,7 @@
 #main .user__field {
   display: flex;
   justify-content: flex-start;
-  padding: 5px 10px;
+  padding: 5px 0;
   border: none;
   align-items: baseline;
 }
@@ -35,6 +35,15 @@
   background: white;
   text-decoration: none;
   outline: none;
+}
+#main .user__error {
+  justify-content: center;
+}
+#main .user__error h5 {
+  color: #FA3C4C;
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  text-align: center;
 }
 #main .user__submit {
   padding: 10px 0;

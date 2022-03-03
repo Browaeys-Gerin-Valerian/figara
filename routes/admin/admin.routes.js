@@ -12,4 +12,4 @@ adminRouter.post("/quizz/new", createQuizzes);
 adminRouter.post("/quizz/delete/:id", deleteQuizz);
 
 
-export default adminRouter;
+export default adminRouter
