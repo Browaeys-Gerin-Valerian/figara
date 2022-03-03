@@ -5,18 +5,15 @@
 <section class="main__content article__container">
 
     <ul class="categories__list">
-        <li class="categories__item">
-            <a class="category" id="category-8" href="categories/8">
-                Object connecté
-            </a>
-            <div class="category__hover"></div>
-        </li> 
-        <li class="categories__item">
-            <a class="category" id="category-7" href="categories/7">
-                Hardware
-            </a>
-            <div class="category__hover"></div>
-        </li> 
+
+        <% for (const { _id, name } of articleCategories) { %> 
+            <li class="categories__item">
+                <a class="category" id="category-<%= _id %>" href="categories/<%= _id %>">
+                    <%= name %>
+                </a>
+                <div class="category__hover"></div>
+            </li> 
+        <% } %> 
     </ul>
 
     <div class="article__content"><%= article.content %></div>

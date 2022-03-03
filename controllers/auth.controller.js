@@ -34,12 +34,6 @@ export const login = async (req, res, next) => {
                 req.session.userId = user._id;
                 req.session.pseudo = user.pseudo;
                 req.session.isAdmin = user.isAdmin;
-
-
-                console.log("PWD_CHECK_USER", req.session.userId);
-                console.log("PWD_CHECK_PSEUDO", req.session.pseudo);
-                console.log("PWD_CHECK_ISADMIN", req.session.isAdmin);
-
                 res.redirect("/app/home")
 
                 return;

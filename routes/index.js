@@ -7,6 +7,7 @@ import authMiddleware from "../middlewares/auth.middleware.js";
 
 router.use((req, res, next) => {
   res.locals.pseudo = req.session.pseudo;
+  res.locals.isAdmin = req.session.isAdmin
   next();
 });
 router.use("/app", appRouter )

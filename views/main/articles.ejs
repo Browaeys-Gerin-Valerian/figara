@@ -14,12 +14,14 @@
             </div>
             <div class="article__excerpt"><%= content %></div>
             <ul class="article__categories">
-                <li class="categories__item">Smartphones</li>
-                <li class="categories__item">Jeux vidéos</li>
-                <li class="categories__item">Front-end</li>
+
+                <% for (const category of categories ) { %> 
+                    <li class="categories__item category" id="category-<%= category._id %>"><%= category.name %></li>
+                <% } %>
+
             </ul>
         </a>
     
-    <%}%>
+    <% } %>
                     
 </section>

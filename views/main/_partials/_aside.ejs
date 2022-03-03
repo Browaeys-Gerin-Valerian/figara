@@ -9,7 +9,7 @@
 
     <div class="user__actions-wrapper">
         <% if (pseudo) { %>
-            <div class="user__welcome-msg">Bienvenue, <%= pseudo %> &#8239;!</div>
+            <div class="user__welcome-msg">Bienvenue, <span class="user__pseudo"><%= pseudo %></span>&#8239;!</div>
         <% } %>
         <div class="user__login">
 
@@ -18,8 +18,9 @@
             <% } else { %>
                 <a id="button__login" class="button--linkto button--muted" href="/auth/login">Login</a>
             <% } %>
-
-            <!-- /<button type="button" class="button--linkto button--muted">Sign-up</button> -->
+            <% if(!pseudo)  {%>
+                / <a id="button__logout" class="button--linkto button--muted" href="/auth/register">Sign-up</a>
+            <% } %>
         </div>
     </div>
 </aside>

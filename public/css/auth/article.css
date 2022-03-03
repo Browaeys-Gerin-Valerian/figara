@@ -8,14 +8,12 @@
   display: flex;
   flex-flow: row wrap;
   gap: 0 15px;
-  padding: 0 15px;
 }
 #main .categories__item {
   height: 35px;
 }
 #main .article__content {
   text-align: left;
-  padding: 0 15px;
   width: 75%;
   margin: 0 0 30px 0;
 }

@@ -1,0 +1,68 @@
+/*
+ *      contact
+ */
+#main .contact-form__wrapper .contact__form {
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+#main .contact-form__wrapper .contact__field {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 0;
+  border: none;
+  align-items: center;
+}
+#main .contact-form__wrapper .contact__field label {
+  flex-basis: 20%;
+}
+#main .contact-form__wrapper .contact__field input,
+#main .contact-form__wrapper .contact__field textarea,
+#main .contact-form__wrapper .contact__field select {
+  height: 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 20px;
+  flex-basis: 60%;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+}
+#main .contact-form__wrapper .contact__field input:hover, #main .contact-form__wrapper .contact__field input:active, #main .contact-form__wrapper .contact__field input:focus, #main .contact-form__wrapper .contact__field input:focus-visible, #main .contact-form__wrapper .contact__field input:focus-within, #main .contact-form__wrapper .contact__field input:target, #main .contact-form__wrapper .contact__field input:visited,
+#main .contact-form__wrapper .contact__field textarea:hover,
+#main .contact-form__wrapper .contact__field textarea:active,
+#main .contact-form__wrapper .contact__field textarea:focus,
+#main .contact-form__wrapper .contact__field textarea:focus-visible,
+#main .contact-form__wrapper .contact__field textarea:focus-within,
+#main .contact-form__wrapper .contact__field textarea:target,
+#main .contact-form__wrapper .contact__field textarea:visited,
+#main .contact-form__wrapper .contact__field select:hover,
+#main .contact-form__wrapper .contact__field select:active,
+#main .contact-form__wrapper .contact__field select:focus,
+#main .contact-form__wrapper .contact__field select:focus-visible,
+#main .contact-form__wrapper .contact__field select:focus-within,
+#main .contact-form__wrapper .contact__field select:target,
+#main .contact-form__wrapper .contact__field select:visited {
+  color: #4e4e4e;
+  border: 1px solid #818181;
+  background: white;
+  text-decoration: none;
+  outline: none;
+}
+#main .contact-form__wrapper .contact__field textarea {
+  height: 150px;
+  padding: 10px 20px;
+}
+#main .contact-form__wrapper .contact__field #choices-select {
+  background-color: white;
+  font-size: 0.8rem !important;
+}
+#main .contact-form__wrapper .contact__submit {
+  padding: 10px 0;
+  text-align: center;
+}
+#main .contact-form__wrapper #contact__message-field label {
+  height: 100%;
+}
+
+/*# sourceMappingURL=contact.css.map */

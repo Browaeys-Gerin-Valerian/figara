@@ -1,0 +1,30 @@
+<div class="main__page-title-container">
+    <h2 class="main__page-title">Nous contacter</h2>
+</div>
+
+<section class="main__content contact-form__wrapper">
+    <form action="/contactForm" method="POST" class="contact__form">        
+        <fieldset class="contact__field">
+            <label for="mail">Email&#8239;: </label>
+            <input type="email" name="mail" id="mail" placeholder="fanfan@latulipe.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
+        </fieldset>
+
+        <fieldset class="contact__field">
+            <label for="choices-select">Sujet&#8239;: </label>
+            <select name="choices-select" id="choices-select">
+                <option selected disabled>Veuillez choisir un sujet</option>
+                <option value="formidable website">Ce site est formidable</option>
+                <option value="private income">La vie de rentier</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="contact__field" id="contact__message-field">
+            <label for="contact__message">Message&#8239;: </label>
+            <textarea class="contact__textarea" name="contact__message" id="contact__message" spellcheck="false"></textarea>
+        </fieldset>
+        
+        <div class="contact__submit">
+            <button type="submit" value="Soumettre" class="button button--accent">Soumettre</button>
+        </div>
+    </form>         
+</section>

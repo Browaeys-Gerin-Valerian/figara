@@ -24,3 +24,25 @@ export const checkPassword = (password) => {
 
     return checker
 }
+
+export const checkEmail = (email) => {
+    const checker = {
+        isCorrect: false,
+        message: ""
+    }
+
+    const emailValid = email.match(REGEX.EMAIL)
+
+    if (emailValid) {
+        checker.isCorrect = true;
+
+    } else {
+        checker.isCorrect = false
+        checker.message = "Format d'email invalide"
+    }
+
+    return checker
+
+
+}
+

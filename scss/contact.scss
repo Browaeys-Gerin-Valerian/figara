@@ -1,0 +1,65 @@
+/*
+ *      contact
+ */
+
+#main {
+    .contact-form__wrapper {
+        .contact {
+            &__form {
+                text-align: left;
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 10px;
+            }
+            &__field {
+                display: flex;
+                justify-content: flex-start;
+                padding: 5px 0;
+                border: none;
+                align-items: center;
+                label {
+                    flex-basis: 20%;
+                }
+                input,
+                textarea,
+                select {
+                    height: 35px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 0 20px;
+                    flex-basis: 60%;
+                    border: 1px solid #cdcdcd;
+                    border-radius: 4px;
+                    &:hover,
+                    &:active,
+                    &:focus,
+                    &:focus-visible,
+                    &:focus-within,
+                    &:target,
+                    &:visited {
+                        color: #4e4e4e;
+                        border: 1px solid #818181;
+                        background: white;
+                        text-decoration: none;
+                        outline: none;
+                    }
+                }
+                textarea {
+                    height: 150px;
+                    padding: 10px 20px;
+                }
+                #choices-select {
+                    background-color: white;
+                    font-size: .8rem !important;
+                }
+            }
+            &__submit {
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+        #contact__message-field label {
+            height: 100%;
+        }
+    }
+}

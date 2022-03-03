@@ -27,8 +27,9 @@ export const createQuizzes = async (req, res) => {
 };
 
 export const deleteQuizz = async (req, res) => {
-    Quizzes.findOne({ where: { id: req.params._id}})
-    Quizzes.deleteOne({ where: { id: req.params._id}})
+    const {id} = req.params
+    console.log("ID --->", id)
+    Quizzes.findByIdAndDelete(id).exec()
     .then(() => res.status(200).json({ message: "Quizz supprimé avec succès"}))
     .catch(error => res.status(400).json({ error }))
 }
@@ -40,17 +41,19 @@ export const getAllQuizzes = async (req, res) => {
 };
 
 export const getQuizz = async (req, res) => {
-    Quizzes.findOne({ where: { id: req.params._id }})
+    const {id} = req.params
+    Quizzes.findById(id).exec()
     .then(quizz => res.status(200).json(quizz))
     .catch(error => res.status(404).json({ error }))
 };
 
 export const modifyQuizzes = async (req, res) => {
+    const { id } = req.params;
     const quizzesObject = req.file ?
     {
         ...JSON.parse(req.body.quizzes),
     } : { ...req.body };
-    Quizzes.updateOne({where: { id: req.params._id}}, { ...quizzesObject, id: req.params._id})
+    Quizzes.findByIdAndUpdate(id, { ...quizzesObject, id: req.params._id}).exec()
     .then(() => res.status(200).json({ message : "Quizz modifié !"}))
     .catch(error => res.status(400).json({ error })) 
 };

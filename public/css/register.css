@@ -15,7 +15,7 @@
   justify-content: flex-start;
   padding: 5px 0;
   border: none;
-  align-items: baseline;
+  align-items: center;
 }
 #main .user__field label {
   flex-basis: 20%;

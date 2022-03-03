@@ -5,11 +5,11 @@ import {
   getLastArticles,
   createNewArticle,
 } from "../queries/articles.query.js";
+import { getCategoriesFromArticle } from "../queries/categories.query.js"
 
 export const lastArticles = async (req, res) => {
   try {
     const lastArticleList = await getLastArticles();
-    //le lastarticleList te renvoie un array de 4 articles
     res.render("main/layout", { template: "homepage", articles: lastArticleList });
 
   } catch (error) { }
@@ -19,18 +19,21 @@ export const lastArticles = async (req, res) => {
 
 export const allArticles = async (req, res) => {
   try {
-    const articlesList = await getAllArticles();
-    res.render("main/layout", { template: "articles", articles: articlesList });
+    const articles = await getAllArticles();
+
+    
+
+    res.render("main/layout", { template: "articles", articles });
 
   } catch (error) { }
 };
 
-export const articleDetail = async () => {
+export const articleDetail = async (req, res) => {
   const { id } = req.params;
   try {
     const article = await getOneArticleById(id);
-    res.render("main/layout", { template: "auth/article", article });
-
+    const articleCategories = await getCategoriesFromArticle(article?.categories)
+    res.render("main/layout", { template: "auth/article", article, articleCategories });
   } catch (error) { }
 };
 
@@ -43,6 +46,7 @@ export const newArticle = async (req, res) => {
     res.json(newArticle).end();
   } catch (error) { }
 };
+
 
 export const articleDelete = async () => {
   const { id } = req.params;

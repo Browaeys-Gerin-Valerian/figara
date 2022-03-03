@@ -1,6 +1,6 @@
 import { Users } from "../models/users/usersModel.js";
 import { findUserPerMail } from "../queries/users.query.js"
-import { checkPassword } from "../utils/functions.js"
+import { checkPassword, checkEmail } from "../utils/functions.js"
 import bcrypt from "bcrypt";
 
 export const createUser = async (req, res) => {
@@ -13,6 +13,13 @@ export const createUser = async (req, res) => {
 
     const { pseudo, password, mail } = req.body
 
+    const checkerEmail = checkEmail(mail)
+    if(!checkerEmail.isCorrect){
+      res.render("main/layout", { template: "register", error: checkerEmail.message });
+      return;
+    }
+
+
     const user = await findUserPerMail(mail)
     if (user) {
       res.render("main/layout", { template: "register", error: "Cet email existe déja" });
@@ -22,14 +29,15 @@ export const createUser = async (req, res) => {
     const checkerPwd = checkPassword(password)
     if (!checkerPwd.isCorrect) {
       res.render("main/layout", { template: "register", error: checkerPwd.message });
+      return
     }
     bcrypt
-      .hash(req.body.password, 10)
+      .hash(password, 10)
       .then((hash) => {
         Users.create({
-          mail: req.body.mail,
+          mail: mail,
           password: hash,
-          pseudo: req.body.pseudo,
+          pseudo: pseudo,
           isAdmin: false,
         })
           .then(() => res.redirect("login"))
