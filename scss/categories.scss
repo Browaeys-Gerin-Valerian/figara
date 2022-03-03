@@ -1,0 +1,21 @@
+/*
+ *      categories
+ */
+
+#main {
+    .categories {
+        &__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 0 20px;
+            width: 70%;
+        }
+        &__item {
+            font-size: 1rem;
+            height: 35px;
+        }
+    }
+}

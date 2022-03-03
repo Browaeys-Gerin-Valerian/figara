@@ -1,18 +1,18 @@
 /*
  *      categories
  */
-
-#main .categories__container .categories__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 0 20px;
-    width: 70%;
+#main .categories__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 20px;
+  width: 70%;
+}
+#main .categories__item {
+  font-size: 1rem;
+  height: 35px;
 }
 
-#main .categories__container .categories__list .categories__item {
-    font-size: 1rem;
-    height: 35px;
-}
+/*# sourceMappingURL=categories.css.map */

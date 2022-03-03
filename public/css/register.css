@@ -1,54 +1,44 @@
 /*
  *      register
  */
-
- #main .user__form {
-    /* width: 90%;
-    max-width: 650px;
-    margin: 0 auto; */
-    text-align: left;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 10px;
+#main .user__form {
+  /* width: 90%;
+  max-width: 650px;
+  margin: 0 auto; */
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+#main .user__field {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 10px;
+  border: none;
+  align-items: baseline;
+}
+#main .user__field label {
+  flex-basis: 20%;
+}
+#main .user__field input {
+  height: 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 20px;
+  flex-basis: 60%;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+}
+#main .user__field input:hover, #main .user__field input:active, #main .user__field input:focus, #main .user__field input:focus-visible, #main .user__field input:focus-within, #main .user__field input:target, #main .user__field input:visited {
+  color: #4e4e4e;
+  border: 1px solid #818181;
+  background: white;
+  text-decoration: none;
+  outline: none;
+}
+#main .user__submit {
+  padding: 10px 0;
+  text-align: center;
 }
 
-#main .user__form .user__field {
-    display: flex;
-    justify-content: flex-start;
-    padding: 5px 10px;
-    border: none;
-    align-items: baseline;
-}
-
-#main .user__form .user__field label {
-    flex-basis: 20%;
-}
-
-#main .user__form .user__field input {
-    height: 35px;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0 20px;
-    flex-basis: 60%;
-    border: 1px solid #cdcdcd;
-    border-radius: 4px;
-}
-
-#main .user__form .user__field input:hover,
-#main .user__form .user__field input:focus,
-#main .user__form .user__field input:focus-visible,
-#main .user__form .user__field input:focus-within,
-#main .user__form .user__field input:visited,
-#main .user__form .user__field input:target,
-#main .user__form .user__field input:active {
-    color: #4e4e4e;
-    border: 1px solid #818181;
-    background: white;
-    text-decoration: none;
-    outline: none;
-}
-
-#main .user__form .user__submit {
-    padding: 10px 0;
-    text-align: center;
-}
+/*# sourceMappingURL=register.css.map */
