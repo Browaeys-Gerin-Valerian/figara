@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "scss:build": "sass scss:public/css",
+    "scss:watch": "sass --watch scss:public/css",
     "start": "nodemon app.js"
   },
   "keywords": [],
@@ -20,7 +22,8 @@
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.3"
+    "mongoose": "^6.2.3",
+    "sass": "^1.49.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
