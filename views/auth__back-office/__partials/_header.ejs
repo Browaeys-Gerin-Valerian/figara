@@ -1,0 +1,26 @@
+<header id="logotype">
+    <% if (template === "homepage")  { %> 
+        <a class="logotype__link" href="/auth/home"><img class="logotype__src" src="../../images/le-figara__logotype.svg" alt="logotype Le Figara"></a>  
+        <% if (pseudo) { %>
+            <div class="user__welcome-msg">Bienvenue, <span class="user__pseudo"><%= pseudo %></span>&#8239;!</div>
+        <% } %> 
+    <% } %> 
+
+    <% if (template === "articles/articlesList")  { %> 
+        <h3 class="section__title">Liste des articles</h3> 
+    <% } %> 
+
+    <% if (template === "articles/update:id")  { %> 
+        <button type="submit" class="button button--accent">Sauvegarder</button>
+        <a class="button__link" href="/auth/articles/delete:id"><img class="button button--muted icon__delete" src="../../images/icon__delete.svg" alt="Icone de suppression"></a> 
+    <% } %> 
+
+    <% if (template === "categories/categoriesList")  { %> 
+        <h3 class="section__title">Liste des catégories</h3> 
+    <% } %> 
+
+    <% if (template === "quizzes/quizzesList")  { %> 
+        <h3 class="section__title">Liste des questionnaires</h3> 
+    <% } %> 
+
+</header>

@@ -1,0 +1,13 @@
+/*
+ *      articles
+ */
+
+#main .article__title {
+    max-height: unset;
+    overflow: unset;
+    text-overflow: unset;
+    white-space: normal;
+    display: initial;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+}

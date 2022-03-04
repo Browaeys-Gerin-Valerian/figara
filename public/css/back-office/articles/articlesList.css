@@ -1,0 +1,112 @@
+/* 
+ *      articles list
+ */
+.section {
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+  text-align: initial;
+}
+.section:last-child {
+  margin: 3rem 0 0 0;
+}
+.section:first-child {
+  margin: 1.5rem 0 0 0;
+}
+.section__title-block {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.section__title {
+  margin: 0;
+  font-size: 1.7rem;
+}
+.section .button {
+  font-size: 0.8rem;
+  padding: 0.7rem 1.25rem;
+}
+.section__content {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 65%;
+  gap: 30px;
+  align-items: baseline;
+}
+.section__content--full-width {
+  width: 100%;
+}
+.section__graph-item {
+  flex-basis: 50%;
+}
+.section__graph-item img {
+  width: 100%;
+  height: auto;
+}
+.section__graph-item figcaption {
+  font-size: 0.9rem;
+  padding: 5px 0 0 0;
+}
+.section__table {
+  border-collapse: collapse;
+}
+.section__table--full-width {
+  width: 90%;
+}
+.section__table th {
+  border-bottom: 1px solid #cdcdcd;
+  padding: 10px;
+}
+.section__table .thead__title,
+.section__table .tbody__title {
+  width: auto;
+  max-width: 400px;
+  text-align: left;
+}
+.section__table .thead__date,
+.section__table .tbody__date,
+.section__table .thead__categories,
+.section__table .tbody__categories {
+  width: 25%;
+  text-align: left;
+}
+.section__table .thead__actions,
+.section__table .tbody__actions {
+  width: 10%;
+  text-align: left;
+}
+.section__table .thead__parent-cat,
+.section__table .thead__nb-articles {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+}
+.section__table .thead__parent-cat {
+  text-align: left;
+}
+.section__table tbody {
+  font-size: 0.8rem;
+}
+.section__table tbody tr {
+  height: 25px;
+}
+.section__table tbody tr td {
+  padding: 0 10px;
+}
+.section__table tbody tr td .category {
+  padding: 0 5px 0 0;
+}
+.section__table tbody tr td .title--overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.section__table tbody tr td .icon {
+  width: 20px;
+  margin: 0 3px;
+}
+.section__table tbody tr .tbody__nb-articles {
+  text-align: center;
+}
+
+/*# sourceMappingURL=articlesList.css.map */
