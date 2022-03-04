@@ -139,11 +139,13 @@ a.button--muted {
     &:focus,
     &:focus-visible,
     &:focus-within,
-    &:target,
-    &:visited {
+    &:target {
         color: #4e4e4e;
         border: 1px solid #818181;
         background: white;
+    }
+    &:visited {
+        border: 1px solid #cdcdcd;
     }
 }
 
@@ -290,6 +292,14 @@ header { grid-area: 1 / 2 / 2 / 3; }
     }
     .user__pseudo {
         color: #fbd106;
+    }
+    .button__link {
+        img {
+            padding: 7px;
+            font-size: 0.8rem;
+            height: 35px;
+            width: auto;
+        }
     }
 }
 
@@ -464,9 +474,12 @@ header { grid-area: 1 / 2 / 2 / 3; }
         &--full-width {
             width: 90%;
         }
+        &--w65 {
+            width: 65%;
+        }
         th {
             border-bottom: 1px solid #cdcdcd;  
-            padding: 10px;      
+            padding: 10px 1rem;      
         }
         .thead__title, 
         .tbody__title {
@@ -489,7 +502,6 @@ header { grid-area: 1 / 2 / 2 / 3; }
         .thead__parent-cat,
         .thead__nb-articles {
             font-size: .9rem;
-            padding: 10px 20px;
         }
         .thead__parent-cat {
             text-align: left;
@@ -499,7 +511,15 @@ header { grid-area: 1 / 2 / 2 / 3; }
             tr {
                 height: 25px;
                 td {
-                    padding: 0 10px;
+                    padding: 0 1rem;
+                    &.tbody__actions {
+                        padding: 0;
+                        text-align: center;
+                        form {
+                            display: inline-flex;
+                            align-items: center;
+                        }
+                    }
                     .category {
                         padding: 0 5px 0 0;
                     }
@@ -511,6 +531,12 @@ header { grid-area: 1 / 2 / 2 / 3; }
                     .icon {
                         width: 20px;
                         margin: 0 3px;
+                    }
+                    .icon__clickable {
+                        cursor: pointer;
+                        background-color: transparent;
+                        padding: 0;
+                        border: 0;
                     }
                 }
                 .tbody__nb-articles {

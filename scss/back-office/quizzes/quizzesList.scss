@@ -86,7 +86,7 @@
         tbody {
             font-size: .8rem;
             tr {
-                height: 25px;
+                height: 35px;
                 td {
                     padding: 0 10px;
                     .category {
@@ -102,7 +102,8 @@
                         margin: 0 3px;
                     }
                 }
-                .tbody__nb-articles {
+                .tbody__nb-articles,
+                .tbody__linkto {
                     text-align: center;
                 }
             }

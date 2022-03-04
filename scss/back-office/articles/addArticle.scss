@@ -1,8 +1,8 @@
 /*
- *      Article: edit
+ *      Article: create
  */
 
-#logotype {
+ #logotype {
     display: flex;
     padding: 0 15px;
     justify-content: flex-start;
@@ -49,7 +49,7 @@
                     &::placeholder {
                         font-size: 1.5rem;
                         color: #4c4c4c;
-                        opacity: 1;
+                        text-transform: lowercase;
                     }
                 }
             }
@@ -156,7 +156,7 @@
                 }
                 &__label {
                     grid-area: 1/2/2/3;
-                    color: #4c4c4c;
+                    // color: #4c4c4c;
                     font-size: .8rem;
                 }
             }

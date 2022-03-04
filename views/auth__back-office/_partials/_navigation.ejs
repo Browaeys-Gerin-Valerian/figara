@@ -1,0 +1,21 @@
+<nav id="navigation">
+    <span class="navigation__item--overline <%= template === "homepage" ? "navigation__item--active" : "" %>">
+        <a class="navigation__item</a>" href="/admin/homepage">Tableau de bord</a>
+    </span>
+
+    <span class="navigation__item--overline <%= template === "articles/articlesList" ? "navigation__item--active" : "" %>">
+        <a class="navigation__item</a>" href="/admin/articles">Articles</a>
+    </span>
+    
+    <span class="navigation__item--overline <%= template === "categories/categoriesList" ? "navigation__item--active" : "" %>">
+        <a class="navigation__item</a>" href="/admin/categories">Catégories</a>
+    </span>
+
+    <span class="navigation__item--overline <%= template === "quizzes/quizzesList" ? "navigation__item--active" : "" %>">
+        <a class="navigation__item</a>" href="/admin/quizzes">Questionnaires</a>
+    </span>
+
+    <span class="navigation__item--overline">
+        <a class="navigation__item</a>" href="/app/home">Site vitrine</a>
+    </span>
+</nav>

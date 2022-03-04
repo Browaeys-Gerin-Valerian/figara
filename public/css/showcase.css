@@ -269,6 +269,10 @@ input {
   display: block;
 }
 
+.category:hover, .category:active, .category:focus, .category:focus-visible, .category:focus-within, .category:target, .category:visited {
+  text-decoration: none;
+}
+
 /* 
  *      general layout
  */

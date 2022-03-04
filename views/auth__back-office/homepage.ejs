@@ -1,7 +1,7 @@
 <section class="section">
     <article class="section__title-block">
         <h2 class="section__title">Articles</h2>
-        <a id="article__quick-add" class="button button--linkto button--muted" href="/auth/articles/new">Ajouter un article</a>
+        <a id="article__quick-add" class="button button--linkto button--muted" href="/admin/article/new">Ajouter un article</a>
     </article>
 
     <article class="section__content">
@@ -24,34 +24,26 @@
     </article>
 
     <article class="section__content section__content--full-width">
-        <table class="section__table">
+        <table class="section__table section__table--w65">
             <thead>
                 <tr>
-                    <th class="thead__parent-cat">Développement</th>
+                    <th class="thead__parent-cat">Nom de la catégorie</th>
                     <th class="thead__nb-articles">Nb. articles associés</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="tbody__parent-cat" id="category-621e38f2b4ec94005e78ecb1">Front-end</td>
-                    <td class="tbody__nb-articles">2</td>
-                </tr>
-                <tr>
-                    <td class="tbody__parent-cat" id="category-62210e868ce05f1bd7e84373">Back-end</td>
-                    <td class="tbody__nb-articles">3</td>
-                </tr>
-                <tr>
-                    <td class="tbody__parent-cat" id="category-621f7dbe8ce05f1bd7e84352">Software</td>
-                    <td class="tbody__nb-articles">6</td>
-                </tr>
-                <tr>
-                    <td class="tbody__parent-cat" id="category-62210eac8ce05f1bd7e84374">Hardware</td>
-                    <td class="tbody__nb-articles">1</td>
-                </tr>
+
+                <% for (const { _id, name } of categories) { %> 
+                    <tr>
+                        <td class="tbody__parent-cat" id="category-<%= _id %>"><%= name %></td>
+                        <td class="tbody__nb-articles">2</td>
+                    </tr>
+                <% } %> 
+
             </tbody>
         </table>
 
-        <table class="section__table">
+        <!-- <table class="section__table">
             <thead>
                 <tr>
                     <th class="thead__parent-cat">Numérique</th>
@@ -76,7 +68,7 @@
                     <td class="tbody__nb-articles">1</td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </article>
                     
 </section>

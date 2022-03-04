@@ -1,6 +1,6 @@
 <header id="logotype">
     <% if (template === "homepage")  { %> 
-        <a class="logotype__link" href="/auth/home"><img class="logotype__src" src="../../images/le-figara__logotype.svg" alt="logotype Le Figara"></a>  
+        <a class="logotype__link" href="/admin/homepage"><img class="logotype__src" src="../../images/le-figara__logotype.svg" alt="logotype Le Figara"></a>  
         <% if (pseudo) { %>
             <div class="user__welcome-msg">Bienvenue, <span class="user__pseudo"><%= pseudo %></span>&#8239;!</div>
         <% } %> 
@@ -10,9 +10,9 @@
         <h3 class="section__title">Liste des articles</h3> 
     <% } %> 
 
-    <% if (template === "articles/update:id")  { %> 
+    <% if (template === "articles/addArticle")  { %> 
         <button type="submit" class="button button--accent">Sauvegarder</button>
-        <a class="button__link" href="/auth/articles/delete:id"><img class="button button--muted icon__delete" src="../../images/icon__delete.svg" alt="Icone de suppression"></a> 
+        <a class="button__link" href="/auth/articles/delete:id"><img class="button button--muted icon__delete" src="/../../images/icon__delete.svg" alt="Icone de suppression"></a> 
     <% } %> 
 
     <% if (template === "categories/categoriesList")  { %> 

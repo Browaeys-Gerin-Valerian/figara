@@ -4,13 +4,13 @@
     </span>
     <% if (pseudo) { %>
         <span class="navigation__item--overline <%= template === "categories" ? "navigation__item--active" : "" %></span>">
-            <a class="navigation__item" href="/auth/categories">Catégories</a>
+            <a class="navigation__item" href="/user/categories">Catégories</a>
         </span>
     <% } %>
 
     <% if (isAdmin) { %>
         <span class="navigation__item--overline <%= template === "admin" ? "navigation__item--active" : "" %></span>">
-            <a class="navigation__item" href="/user/admin" class="active">Back office</a>
+            <a class="navigation__item" href="/admin/homepage" class="active">Back office</a>
         </span> 
     <% } %>
 

@@ -13,18 +13,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="tbody__title">
-                        <div class="title--overflow">La fiabilité de l'indice de réparabilité remise en question par l'association HOP</div>
-                    </td>
-                    <td class="tbody__linkto">
-                        <a href="/auth/articles/:id"><img class="icon icon__edit" src="../../images/icon__link.svg" alt="Icone de lien"></a>
-                    </td>
-                    <td class="tbody__actions">
-                        <a href="/auth/articles/edit:id"><img class="icon icon__edit" src="../../images/icon__edit.svg" alt="Icone d'édition"></a>
-                        <a href="/auth/articles/delete:id"><img class="icon icon__delete" src="../../images/icon__delete.svg" alt="Icone de suppression"></a>
-                    </td>
-                </tr>
+
+                <% for (const { _id, question } of quizzes) { %>
+                    <tr>
+                        <td class="tbody__title">
+                            <div class="title--overflow"><%= question %></div>
+                        </td>
+                        <td class="tbody__linkto">
+                            <a href="/auth/articles/:id"><img class="icon icon__edit" src="../../images/icon__link.svg" alt="Icone de lien"></a>
+                        </td>
+
+                        <td class="tbody__actions">
+                            <span title="Editer le questionnaire" class="icon__clickable" id="editId" data-id="<%= _id %>">
+                                <img class="icon icon__edit" src="../../images/icon__edit.svg" alt="Icone d'édition">
+                            </span>
+                            <span title="Supprimer le questionnaire" class="icon__clickable" id="deleteId" data-id="<%= _id %>">
+                                <img class="icon icon__delete" src="../../images/icon__delete.svg" alt="Icone de suppression">
+                            </span>
+                        </td>
+                    </tr>
+                <% } %>
+                
             </tbody>
         </table>
     </article>

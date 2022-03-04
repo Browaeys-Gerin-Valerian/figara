@@ -48,11 +48,11 @@
 #main .custom-checkbox--marker::after {
   content: "";
   display: none;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 3px;
   background: #fbd106;
-  margin: 1px;
+  margin: 2px;
 }
 #main .custom-checkbox--with-label {
   grid-template-columns: 20px 1fr;
@@ -70,6 +70,7 @@
 #main .custom-checkbox--with-label .custom-checkbox__label {
   grid-area: 1/2/2/3;
   color: #4c4c4c;
+  text-transform: initial;
 }
 
 /*# sourceMappingURL=quizz.css.map */

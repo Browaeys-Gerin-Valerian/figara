@@ -10,8 +10,9 @@
         <h2 class="section__title">Catégories</h2>
         <ul class="article__categories">
 
-                <li class="categories__item category" id="category-62210e868ce05f1bd7e84373">Back-end</li>
-                <li class="categories__item category" id="category-621f7dbe8ce05f1bd7e84352">Software</li>
+            <% for (const { _id, name } of categories) { %>
+                <li class="categories__item category" id="category-<%= _id %>"><%= name %></li>
+            <% } %>
 
         </ul>
     </article>

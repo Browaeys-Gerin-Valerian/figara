@@ -1,6 +1,6 @@
 <section class="section">
     <article class="section__title-block">
-        <a id="article__quick-add" class="button button--linkto button--muted" href="/auth/articles/new">Ajouter un article</a>
+        <a id="article__quick-add" class="button button--linkto button--muted" href="/admin/article/new">Ajouter un article</a>
     </article>
 
     <article class="section__content section__content--full-width">
@@ -14,19 +14,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="tbody__title">
-                        <div class="title--overflow">La fiabilité de l'indice de réparabilité remise en question par l'association HOP</div>
-                    </td>
-                    <td class="tbody__date">3 mars 2022, 14:55</td>
-                    <td class="tbody__categories">
-                        <span class="category" id="category-621e391bb4ec94005e78ecb9">Gaming</span>
-                        <span class="category" id="category-621f7dbe8ce05f1bd7e84352">Software</span>
-                    </td>
-                    <td class="tbody__actions">
-                        <a href="/auth/articles/edit:id"><img class="icon icon__edit" src="../../images/icon__edit.svg" alt="Icone d'édition"></a>
-                        <a href="/auth/articles/delete:id"><img class="icon icon__delete" src="../../images/icon__delete.svg" alt="Icone de suppression"></a>
-                    </td>
+
+                <% for (const { _id, index, title, content, categories, updatedAt } of articles) { %>
+                    <tr>
+                        <td class="tbody__title">
+                            <div class="title--overflow"><%= title %></div>
+                        </td>
+                        <td class="tbody__date">3 mars 2022, 14:55</td>
+                        <td class="tbody__categories">
+
+                            <% for (const { _id, name } of categories) { %>
+                                <span class="category" id="category-<%= _id %>"><%= name %></span>
+                            <% } %>
+
+                        </td>
+                        <td class="tbody__actions">
+                            <form action="/admin/article/edit/<%= _id %>" method="POST">
+                                <button type="submit" title="Editer l'article" class="icon__clickable" id="editId" data-id="<%= _id %>">
+                                    <img class="icon icon__edit" src="../../images/icon__edit.svg" alt="Icone d'édition'">
+                                </button>
+                            </form>
+                            <form action="/admin/article/delete/<%= _id %>" method="POST">
+                                <button type="submit" title="Supprimer l'article" class="icon__clickable" id="deleteId" data-id="<%= _id %>">
+                                    <img class="icon icon__delete" src="../../images/icon__delete.svg" alt="Icone de suppression">
+                                </button>
+                            </form>
+                        </td>
+                    <% } %>
+
                 </tr>
             </tbody>
         </table>

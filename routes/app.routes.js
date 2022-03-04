@@ -1,12 +1,15 @@
 import express from "express";
 const appRouter = express.Router();
-import { lastArticles, allArticles } from "../controllers/article.controller.js";
+import { homepage, allArticles, searchInArticles } from "../controllers/article.controller.js";
+import { contact } from "../controllers/other.controller.js";
 
 
 
-appRouter.get("/home", lastArticles)
+
+appRouter.get("/home", homepage)
+appRouter.post("/search", searchInArticles)
 appRouter.get("/articles", allArticles)
-appRouter.get("/contact")
+appRouter.get("/contact", contact)
 
 
 export default appRouter;

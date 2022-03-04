@@ -1,5 +1,5 @@
 /*
- *      Article: edit
+ *      Article: create
  */
 #logotype {
   display: flex;
@@ -49,7 +49,7 @@
 #main .section__title-block .title__input::placeholder {
   font-size: 1.5rem;
   color: #4c4c4c;
-  opacity: 1;
+  text-transform: lowercase;
 }
 #main .section__title {
   padding: 0 0 0 15px;
@@ -151,8 +151,7 @@
 }
 #main .custom-checkbox--with-label .custom-checkbox__label {
   grid-area: 1/2/2/3;
-  color: #4c4c4c;
   font-size: 0.8rem;
 }
 
-/*# sourceMappingURL=updateArticle.css.map */
+/*# sourceMappingURL=addArticle.css.map */

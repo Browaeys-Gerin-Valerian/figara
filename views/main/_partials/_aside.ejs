@@ -1,10 +1,12 @@
 <aside id="aside-menu">
     <div class="search__wrapper">
-        <label id="site-search" class="search__container">
-            <input class="search__input" type="search" name="search"
-            aria-label="Rechercher parmi les articles" minlength="3" placeholder="saisir le terme à rechercher">
-            <button type="submit" class="search__button"><img class="icon icon__search" src="../../images/icon__search.svg" alt="Icone de recherche"></button>
-        </label>
+        <form action="/app/search" method="POST">
+            <label id="site-search" class="search__container">
+                <input class="search__input" type="search" name="search"
+                aria-label="Rechercher parmi les articles" minlength="3" placeholder="saisir le terme à rechercher">
+                <button type="submit" class="search__button"><img class="icon icon__search" src="/../../images/icon__search.svg" alt="Icone de recherche"></button>
+            </label>
+        </form>
     </div>
 
     <div class="user__actions-wrapper">

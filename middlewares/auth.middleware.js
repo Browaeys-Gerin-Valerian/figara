@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
-import {CONFIG} from "../config/config.js"
-const {SECRET_KEY} = CONFIG
+import { CONFIG } from "../config/config.js"
+const { SECRET_KEY } = CONFIG
 
-export default (req, res, next) => {
+export const authMiddleware = (req, res, next) => {
     jwt.verify(req.session.token, SECRET_KEY, (err, decode) => {
         if (
             typeof decode === "undefined" ||
@@ -15,3 +15,13 @@ export default (req, res, next) => {
         next();
     });
 };
+
+
+export const authAdminMiddleware = (req, res, next) => {
+    if (!req.session.isAdmin) {
+        res.redirect("/auth/login");
+    }
+    next()
+
+}
+

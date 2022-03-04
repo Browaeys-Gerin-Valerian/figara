@@ -8,7 +8,7 @@
 
         <% for (const { _id, name } of articleCategories) { %> 
             <li class="categories__item">
-                <a class="category" id="category-<%= _id %>" href="categories/<%= _id %>">
+                <a class="category" id="category-<%= _id %>" href="/user/category/<%= _id %>">
                     <%= name %>
                 </a>
                 <div class="category__hover"></div>
@@ -18,6 +18,8 @@
 
     <div class="article__content"><%= article.content %></div>
 
-    <a href="articles/1/quizz" class="button button--accent">Questionnaire</a>
+    <% if (article.quizzes) { %> 
+        <a href="/user/article/<%= article._id %>/quizz/<%= article.quizzes %>" class="button button--accent">Questionnaire</a>
+    <% } %> 
                     
 </section>

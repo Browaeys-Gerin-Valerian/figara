@@ -4,6 +4,13 @@ export const getCategoriesFromArticle = (arrCategoryIds) => {
    return Categories.find().where('_id').in(arrCategoryIds).exec();
 }
 
-// export const getCategoriesFromArticles = (ListArticle) => {
-//     return ListArticle[0].categories[0].find().populate("categories").exec()
-// }
+
+
+export const findAllCategories = () => {
+   return Categories.find().exec()
+}
+
+export const findOneCategory = (id) => {
+   return Categories.findById(id).exec()
+}
+

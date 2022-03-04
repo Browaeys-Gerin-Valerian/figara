@@ -4,55 +4,17 @@
 
 <section class="main__content categories__container">
     <ul class="categories__list">
+
+        <% for (const { _id, name } of categories) { %> 
    
             <li class="categories__item">
-                <a class="category" id="category-1" href="categories/1">
-                    Front-end
+                <a class="category" id="category-<%= _id %>" href="category/<%= _id %>">
+                    <%= name %>
                 </a>
                 <div class="category__hover"></div>
-            </li>    
-            <li class="categories__item">
-                <a class="category" id="category-2" href="categories/2">
-                    Back-end
-                </a>
-                <div class="category__hover"></div>
-            </li> 
-            <li class="categories__item">
-                <a class="category" id="category-3" href="categories/3">
-                    Smartphones
-                </a>
-                <div class="category__hover"></div>
-            </li> 
-            <li class="categories__item">
-                <a class="category" id="category-4" href="categories/4">
-                    Gaming
-                </a>
-                <div class="category__hover"></div>
-            </li> 
-            <li class="categories__item">
-                <a class="category" id="category-5" href="categories/5">
-                    Réalité augmentée
-                </a>
-                <div class="category__hover"></div>
-            </li> 
-            <li class="categories__item">
-                <a class="category" id="category-6" href="categories/6">
-                    Software
-                </a>
-                <div class="category__hover"></div>
-            </li> 
-            <li class="categories__item">
-                <a class="category" id="category-7" href="categories/7">
-                    Hardware
-                </a>
-                <div class="category__hover"></div>
-            </li> 
-            <li class="categories__item">
-                <a class="category" id="category-8" href="categories/8">
-                    Object connecté
-                </a>
-                <div class="category__hover"></div>
-            </li> 
+            </li>  
+            
+        <% } %> 
 
     </ul>
                     

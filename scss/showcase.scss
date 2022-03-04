@@ -228,6 +228,18 @@ input {
     .categories__item:hover .category__hover {
         display: block;
     }
+    .category {
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus-visible,
+        &:focus-within,
+        &:target,
+        &:visited {
+            text-decoration: none;
+    }
+}
+
 
 
 

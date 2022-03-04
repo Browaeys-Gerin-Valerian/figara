@@ -7,8 +7,7 @@ const articlesSchema = Schema(
         title: { type: String, required: true },
         content: { type: String, required: true },
         categories: [{ _id: { type: Schema.Types.ObjectId, ref: "Categories" }, name: { type: String } }],
-        quizzes: [{ type: Schema.Types.ObjectId, ref: "Quizzes" }],
-
+        quizzes: { type: Schema.Types.ObjectId, ref: "Quizzes" },
     },
     { timestamps: true }
 );

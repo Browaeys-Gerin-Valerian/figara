@@ -1,4 +1,7 @@
 import { Quizzes } from "../models/quizzes/quizzesModel.js";
+import {findArticleByQuizz, getOneArticleById} from "../queries/articles.query.js"
+import { getQuizzById, getAllQuizz } from "../queries/quizz.query.js";
+
 
 export const createQuizzes = async (req, res) => {
     
@@ -28,23 +31,25 @@ export const createQuizzes = async (req, res) => {
 
 export const deleteQuizz = async (req, res) => {
     const {id} = req.params
-    console.log("ID --->", id)
     Quizzes.findByIdAndDelete(id).exec()
     .then(() => res.status(200).json({ message: "Quizz supprimé avec succès"}))
     .catch(error => res.status(400).json({ error }))
 }
 
 export const getAllQuizzes = async (req, res) => {
-    Quizzes.find()
-    .then(quizzes => res.status(200).json(quizzes))
-    .catch(error => res.status(404).json({ error }))
+    const quizz = await getAllQuizz()
+    res.render("main/layout", {template: "auth/quizz", quizz})
 };
 
 export const getQuizz = async (req, res) => {
-    const {id} = req.params
-    Quizzes.findById(id).exec()
-    .then(quizz => res.status(200).json(quizz))
-    .catch(error => res.status(404).json({ error }))
+    const {articleid, quizzid} = req.params
+
+    const article = await getOneArticleById(articleid)
+
+    const quizz = await getQuizzById(quizzid)
+    res.render("main/layout", {template:"auth/quizz", article, quizz})
+
+
 };
 
 export const modifyQuizzes = async (req, res) => {

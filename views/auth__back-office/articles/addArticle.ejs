@@ -1,0 +1,75 @@
+<form action="/admin/article/new" method="POST">
+
+    <section class="section">
+        <article class="section__title-block section__title-block--main">
+            <label class="title__label" for="title">Titre de l'article&#8239;: </label>
+            <input class="title__input" type="text" id="title" name="title" placeholder="Le titre de votre article" required minlength="3">
+        </article>                    
+    </section>
+    
+    <section class="section">
+        <article class="section__title-block">
+            <h2 class="section__title">Catégories</h2>
+        </article>
+    
+        <article class="section__content">
+            <ul class="categories__list">
+    
+                <% for (const { _id, name } of categories) { %>
+    
+                    <li class="choices__entry">
+                        <label class="custom-checkbox custom-checkbox--with-label categories__item">
+                            <input type="checkbox" id="<%= _id %>" name="<%= _id %>" class="">
+                            <span class="custom-checkbox--marker"></span>
+                            <span id="category-<%= _id %>" class="custom-checkbox__label category">
+                                <%= name %>
+                            </span>
+                        </label>
+                    </li>
+    
+                <% } %>
+    
+            </ul>
+        </article>
+                        
+    </section>
+    
+    <section class="section">
+        <article class="section__title-block">
+            <h2 class="section__title">Corps de l'article</h2>
+        </article>
+    
+        <article class="section__content section__content--medium-height">
+            <textarea class="section__textarea" name="content" id="article__content" spellcheck="false"></textarea>
+        </article>
+                        
+    </section>
+    
+    <section class="section">
+        <article class="section__title-block">
+            <h2 class="section__title">Questionnaires</h2>
+        </article>
+    
+        <article class="section__content">
+            <ul class="quizzes__list">
+    
+                <% for (const { _id, question } of quizzes) { %>
+       
+                    <li class="choices__entry">
+                        <label class="custom-checkbox custom-checkbox--with-label categories__item">
+                            <input type="checkbox" id="<%= _id %>" name="<%= _id %>" class="">
+                            <span class="custom-checkbox--marker"></span>
+                            <span class="custom-checkbox__label">
+                                <%= question %>
+                            </span>
+                        </label>
+                    </li>
+    
+                <% } %>
+    
+            </ul>
+        </article>
+                        
+    </section>
+
+</form>

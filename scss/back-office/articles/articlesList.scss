@@ -51,11 +51,11 @@
     &__table {
         border-collapse: collapse;
         &--full-width {
-            width: 90%;
+            width: 100%;
         }
         th {
             border-bottom: 1px solid #cdcdcd;  
-            padding: 10px;      
+            padding: 10px 15px;      
         }
         .thead__title, 
         .tbody__title {
@@ -86,9 +86,9 @@
         tbody {
             font-size: .8rem;
             tr {
-                height: 25px;
+                height: 35px;
                 td {
-                    padding: 0 10px;
+                    padding: 0 15px;
                     .category {
                         padding: 0 5px 0 0;
                     }

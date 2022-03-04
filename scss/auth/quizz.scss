@@ -50,11 +50,11 @@
             &::after {
                 content: "";
                 display: none;
-                width: calc(20px - 4px);
-                height: calc(20px - 4px);
+                width: calc(20px - 5px);
+                height: calc(20px - 5px);
                 border-radius: 3px;
                 background: #fbd106;
-                margin: 1px;
+                margin: 2px;
             }
         }
         &--with-label {
@@ -73,6 +73,7 @@
                 &__label {
                     grid-area: 1/2/2/3;
                     color: #4c4c4c;
+                    text-transform: initial;
                 }
             }
         }

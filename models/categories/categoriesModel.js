@@ -1,12 +1,12 @@
 import pkg from "mongoose";
-const {Schema, model} = pkg;
+const { Schema, model } = pkg;
 
 const categoriesSchema = Schema(
     {
         index: Number,
-        name: {type: String, required: true},
+        name: { type: String, required: true },
     },
-    {timestamps: true}
+    { timestamps: true }
 );
 
 categoriesSchema.pre("save", async function () {
